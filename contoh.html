@@ -36,11 +36,34 @@
             }
         }
 
-        /* Jumbotron styling */
+        /* Navbar styling with wave */
+        .navbar {
+            background-color: transparent;
+            position: relative;
+        }
+
+        .wave-container-nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .wave-nav {
+            position: absolute;
+            top: 0;
+            width: 200%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23007bff" fill-opacity="1" d="M0,64L48,80C96,96,192,128,288,144C384,160,480,160,576,170.7C672,181,768,203,864,213.3C960,224,1056,224,1152,218.7C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            animation: wave-animation 6s infinite linear;
+        }
+
         .jumbotron {
             background-color: #f8f9fa;
             padding: 2rem 1rem;
-            text-align: center;
         }
 
         .marquee-text {
@@ -57,7 +80,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <a class="navbar-brand" href="#"><i class="fas fa-tools"></i> Tukang Online</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,16 +103,20 @@
                     </ul>
                 </div>
             </div>
+            <!-- Wave Background in Navbar -->
+            <div class="wave-container-nav">
+                <div class="wave-nav"></div>
+            </div>
         </nav>
     </header>
 
-    <!-- Wave Background Section -->
+    <!-- Wave Background Below Navbar -->
     <div class="wave-container">
         <div class="wave"></div>
     </div>
 
     <main>
-        <section id="beranda" class="jumbotron">
+        <section id="beranda" class="jumbotron text-center">
             <h1 class="display-4">Selamat Datang di Aplikasi Tukang Online</h1>
             <p class="lead">Solusi cepat dan mudah untuk kebutuhan perbaikan rumah Anda</p>
             <a class="btn btn-primary btn-lg" href="#" role="button"><i class="fas fa-download"></i> Unduh Aplikasi</a>
@@ -141,10 +168,14 @@
         <marquee behavior="scroll" direction="left">Dapatkan promo spesial bulan ini! Hubungi kami sekarang juga untuk informasi lebih lanjut.</marquee>
     </div>
 
-    <footer class="bg-light text-center py-4">
-        <p>&copy; 2024 Tukang Online. All rights reserved.</p>
+    <footer class="bg-light py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Tukang Online. All rights reserved.</p>
+        </div>
     </footer>
 
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
